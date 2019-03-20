@@ -1,0 +1,4 @@
+#Fri Mar 15 12:40:13 MST 2019
+base.0=/home/janeth/Documentos/Escuela/Cuatri 8/DESOFAM/LEEN/app/build/intermediates/transforms/dexMerger/debug/10
+path.0=classes.dex
+renamed.0=classes.dex
