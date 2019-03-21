@@ -2,8 +2,10 @@ package com.example.root.leen;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -17,8 +19,6 @@ public class Nivel1Activity extends AppCompatActivity {
     private ImageView numUno;
     private ImageView imgUno;
     int x;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,62 +34,62 @@ public class Nivel1Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        btnRegresar = (ImageButton)  findViewById(R.id.btnRegresar);
+        btnSig = (ImageButton) findViewById(R.id.btnSig);
+        imgUno = (ImageView) findViewById(R.id.imgUno);
+        numUno = (ImageView) findViewById(R.id.numUno);
+        x=0;
+        changeImg(R.drawable.one,R.drawable.uno,150,200);
+
+
         btnSig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 x++;
-                if (x>8)
+                if (x>9)
                     x=0;
                 if (x==0){
-                    numUno.setImageResource(R.drawable.one);
-                    imgUno.setImageResource(R.drawable.uno);
+                    changeImg(R.drawable.one,R.drawable.uno,150,200);
                 }
                 else if (x==1){
-                    numUno.setImageResource(R.drawable.two);
-                    imgUno.setImageResource(R.drawable.dos);
+                    changeImg(R.drawable.two,R.drawable.dos,150,300);
                 }
                 else if (x==2){
-                    numUno.setImageResource(R.drawable.three);
-                    imgUno.setImageResource(R.drawable.tres);
+                    changeImg(R.drawable.three,R.drawable.tres,150,300);
                 }
                 else if (x==3){
-                    numUno.setImageResource(R.drawable.four);
-                    imgUno.setImageResource(R.drawable.cuatro);
+                    changeImg(R.drawable.four,R.drawable.cuatro,180,320);
                 }
                 else if (x==4){
-                    numUno.setImageResource(R.drawable.five);
-                    imgUno.setImageResource(R.drawable.cinco);
+                    changeImg(R.drawable.five,R.drawable.cinco,200,300);
                 }
                 else if (x==5){
-                    numUno.setImageResource(R.drawable.six);
-                    imgUno.setImageResource(R.drawable.seis);
+                    changeImg(R.drawable.six,R.drawable.seis,200,330);
                 }else if (x==6){
-                    numUno.setImageResource(R.drawable.seven);
-                    imgUno.setImageResource(R.drawable.siete);
+                    changeImg(R.drawable.seven,R.drawable.siete,210,350);
                 }else if (x==7){
-                    numUno.setImageResource(R.drawable.eight);
-                    imgUno.setImageResource(R.drawable.ocho);
+                    changeImg(R.drawable.eight,R.drawable.ocho,210,350);
                 }else if (x==8){
-                    numUno.setImageResource(R.drawable.nine);
-                    imgUno.setImageResource(R.drawable.nueve);
+                    changeImg(R.drawable.nine,R.drawable.nueve,210,350);
                 }
-                else if (x==9)
-                {
-                    numUno.setImageResource(R.drawable.teen);
-                    imgUno.setImageResource(R.drawable.diez);
+                else if (x==9){
+                    changeImg(R.drawable.teen,R.drawable.diez,210,350);
                 }
 
             }
         });
+    }
 
-        btnRegresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Nivel1Activity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+    private void changeImg(int one, int uno, int height, int width) {
+        numUno.setImageResource(one);
+        imgUno.setImageResource(uno);
+        imgUno.getLayoutParams().height=dpToPx(height);
+        imgUno.getLayoutParams().width=dpToPx(width);
+    }
 
-            }
-        });
+    private int dpToPx(float dip) {
+        Resources r = getResources();
+        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, r.getDisplayMetrics());
+        return (int)px;
     }
 }

@@ -1,4 +1,4 @@
-#Fri Mar 15 12:40:13 MST 2019
-base.0=/home/janeth/Documentos/Escuela/Cuatri 8/DESOFAM/LEEN/app/build/intermediates/transforms/dexMerger/debug/8
+#Wed Mar 20 20:44:30 MST 2019
+base.0=C\:\\Users\\jjab_\\AndroidStudioProjects\\Proyecto\\LEEN\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
 path.0=classes.dex
 renamed.0=classes.dex
