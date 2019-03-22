@@ -10,5 +10,5 @@
     <item android:drawable="@drawable/fondo2"
         android:duration="2000"/>
     <item android:drawable="@drawable/fondo1"
-        android:duration="5000"/>
+        android:duration="2000"/>
 </animation-list>
