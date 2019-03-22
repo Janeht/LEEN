@@ -631,6 +631,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable animabotonflecha
+drawable animabotonnext
 drawable animacion
 drawable app
 drawable cinco
@@ -640,6 +642,7 @@ drawable dos
 drawable eight
 drawable five
 drawable fle
+drawable flechapres
 drawable fondo1
 drawable fondo2
 drawable fondo3
@@ -649,6 +652,7 @@ drawable ic_launcher_foreground
 drawable ini
 drawable init3
 drawable next
+drawable nextpres
 drawable nine
 drawable nivel1
 drawable nivel2

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/janeth/Documentos/Escuela/Cuatri8/DESOFAM/LEEN/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "C:\\Users\\jjab_\\AndroidStudioProjects\\Proyecto\\LEEN\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6a6c55a6300fa17a3fc35e94989bd104/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\jjab_\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\dd69d2b38431e3115c3973c06830a16e\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

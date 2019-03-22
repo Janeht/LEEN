@@ -21,10 +21,10 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:background="#0000"
-                android:src="@drawable/fle"
+                android:src="@drawable/animabotonflecha"
                 android:id="@+id/btnRegresar"/>
 
-            <ImageView
+            <ImageButton
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="300dp"
@@ -35,27 +35,24 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/one"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="-45dp"
-            android:id="@+id/numUno"
-            android:visibility="visible"/>
+            android:layout_marginTop="-80dp"
+            android:id="@+id/numUno"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/uno"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:id="@+id/imgUno"
-            android:visibility="visible"/>
+            android:layout_marginTop="10dp"
+            android:id="@+id/imgUno" />
+
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next"
+            android:src="@drawable/animabotonnext"
             android:layout_gravity="right"
             android:layout_marginTop="-75dp"
             android:layout_marginBottom="10dp"

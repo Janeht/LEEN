@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50"
         android:orientation="vertical"
         android:layout_marginTop="20dp">
 
@@ -28,7 +28,7 @@
                 <Button
                     android:layout_width="120dp"
                     android:layout_height="130dp"
-                    android:background="@drawable/nivel1"
+                    android:background="@drawable/btnniveluno"
                     android:id="@+id/btn1"/>
                 <TextView
                     android:layout_width="80dp"
@@ -50,7 +50,7 @@
                 <Button
                     android:layout_width="120dp"
                     android:layout_height="130dp"
-                    android:background="@drawable/nivel2"
+                    android:background="@drawable/btnniveldos"
                     android:id="@+id/btn2"
                     />
                 <TextView
@@ -72,7 +72,7 @@
                 <Button
                     android:layout_width="120dp"
                     android:layout_height="130dp"
-                    android:background="@drawable/nivel3"
+                    android:background="@drawable/btnniveltres"
                     android:id="@+id/btn3"
                     />
                 <TextView

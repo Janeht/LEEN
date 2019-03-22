@@ -14,7 +14,7 @@
         <Button
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:background="@drawable/fle"
+            android:background="@drawable/animabotonflecha"
             android:id="@+id/btnRegresar"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"/>
