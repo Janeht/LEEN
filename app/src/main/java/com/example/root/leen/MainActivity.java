@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.io.IOException;
 
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         this.fondo = (ConstraintLayout) findViewById(R.id.prueba);
         this.animacion = (AnimationDrawable) this.fondo.getBackground();
-        this.animacion.setEnterFadeDuration(0);
-        this.animacion.setExitFadeDuration(10);
+        this.animacion.setEnterFadeDuration(10);
+        this.animacion.setExitFadeDuration(3500);
         this.animacion.start();
 
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 
     }
 }
