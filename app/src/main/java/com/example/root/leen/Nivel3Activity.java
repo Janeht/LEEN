@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -16,14 +17,14 @@ public class Nivel3Activity extends AppCompatActivity {
 
     private Button btnRegresar;
     private Button btnReproducir;
-    private ImageButton btnPrimeraOP;
-    private ImageButton btnSegundaOP;
-    private ImageButton btnTerceraOP;
-    private ImageButton btnCuartaOP;
-    private ImageButton btnElegir1;
-    private ImageButton btnElegir2;
-    private ImageButton btnElegir3;
-    private ImageButton btnElegir4;
+    private ImageView btnPrimeraOP;
+    private ImageView btnSegundaOP;
+    private ImageView btnTerceraOP;
+    private ImageView btnCuartaOP;
+    private ImageView btnElegir1;
+    private ImageView btnElegir2;
+    private ImageView btnElegir3;
+    private ImageView btnElegir4;
 
     int[] direc = new int[4];
     int[] imagEleccion = new int[4];
@@ -41,14 +42,14 @@ public class Nivel3Activity extends AppCompatActivity {
 
         btnRegresar = (Button) findViewById(R.id.btnRegresar);
         btnReproducir = (Button) findViewById(R.id.btnReproducir);
-        btnPrimeraOP = (ImageButton) findViewById(R.id.btnPrimeraOP);
-        btnSegundaOP = (ImageButton) findViewById(R.id.btnSegundaOP);
-        btnTerceraOP = (ImageButton) findViewById(R.id.btnTerceraOP);
-        btnCuartaOP = (ImageButton) findViewById(R.id.btnCuartaOP);
-        btnElegir1 = (ImageButton) findViewById(R.id.btnElegir1);
-        btnElegir2 = (ImageButton) findViewById(R.id.btnElegir2);
-        btnElegir3 = (ImageButton) findViewById(R.id.btnElegir3);
-        btnElegir4 = (ImageButton) findViewById(R.id.btnElegir4);
+        btnPrimeraOP = (ImageView) findViewById(R.id.btnPrimeraOP);
+        btnSegundaOP = (ImageView) findViewById(R.id.btnSegundaOP);
+        btnTerceraOP = (ImageView) findViewById(R.id.btnTerceraOP);
+        btnCuartaOP = (ImageView) findViewById(R.id.btnCuartaOP);
+        btnElegir1 = (ImageView) findViewById(R.id.btnElegir1);
+        btnElegir2 = (ImageView) findViewById(R.id.btnElegir2);
+        btnElegir3 = (ImageView) findViewById(R.id.btnElegir3);
+        btnElegir4 = (ImageView) findViewById(R.id.btnElegir4);
 
         int num = generarNum();
         int num1 = 0;
