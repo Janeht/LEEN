@@ -24,10 +24,10 @@
                 android:src="@drawable/animabotonflecha"
                 android:id="@+id/btnRegresar"/>
 
-            <ImageButton
+            <ImageView
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="350dp"
                 android:background="#0000"
                 android:layout_marginTop="15dp"
                 android:src="@drawable/silenciar" />
