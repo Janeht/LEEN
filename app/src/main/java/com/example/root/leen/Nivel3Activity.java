@@ -8,8 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -25,20 +24,17 @@ public class Nivel3Activity extends AppCompatActivity {
     private ImageButton btnElegir2;
     private ImageButton btnElegir3;
     private ImageButton btnElegir4;
-    private TextView lbl0;
-    private TextView lbl1;
-    private TextView lbl2;
-    private TextView lbl3;
-    private TextView lbl4;
-    int num = generarNum();
-    int[] direc = {};
-    int imaEl[] = new int[4];
+
+    int[] direc = new int[4];
+    int[] imagEleccion = new int[4];
+    int[] very = new int[4];
+    int verificar = 0;
+    int vali = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivel3);
-
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -53,16 +49,12 @@ public class Nivel3Activity extends AppCompatActivity {
         btnElegir2 = (ImageButton) findViewById(R.id.btnElegir2);
         btnElegir3 = (ImageButton) findViewById(R.id.btnElegir3);
         btnElegir4 = (ImageButton) findViewById(R.id.btnElegir4);
-        lbl0 = (TextView) findViewById(R.id.lbl0);
-        lbl1 = (TextView) findViewById(R.id.lbl1);
-        lbl2 = (TextView) findViewById(R.id.lbl2);
-        lbl3 = (TextView) findViewById(R.id.lbl3);
-        lbl4 = (TextView) findViewById(R.id.lbl4);
+
+        int num = generarNum();
         int num1 = 0;
         int num2 = 0;
         int num3 = 0;
         int num4 = 0;
-
 
         if(num==1){
             num1 = R.drawable.one;
@@ -113,12 +105,12 @@ public class Nivel3Activity extends AppCompatActivity {
             num4 = R.drawable.teen;
         }
 
-        direc = desordenar(num1, num2, num3, num4);
-        int[] very = new int[4];
+        very[0]=num1;
+        very[1]=num2;
+        very[2]=num3;
+        very[3]=num4;
 
-        for(int i=0; i<4; i++){
-            very[i]=direc[i];
-        }
+        direc = desordenar(num1, num2, num3, num4);
 
         btnPrimeraOP.setImageResource(direc[0]);
         btnSegundaOP.setImageResource(direc[1]);
@@ -128,117 +120,88 @@ public class Nivel3Activity extends AppCompatActivity {
         btnPrimeraOP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnElegir1.getDrawable() == null) {
+                if(btnElegir1.getDrawable() == null)
                     btnElegir1.setImageResource(direc[0]);
-                    imaEl[0] = direc[0];
-                    lbl1.setText(""+imaEl[0]);
 
-                }
-                else if(btnElegir2.getDrawable() == null){
+                else if(btnElegir2.getDrawable() == null)
                     btnElegir2.setImageResource(direc[0]);
-                    imaEl[0] = direc[0];
-                    lbl1.setText(""+imaEl[0]);
-                }
 
-                else if(btnElegir3.getDrawable() == null){
+                else if(btnElegir3.getDrawable() == null)
                     btnElegir3.setImageResource(direc[0]);
-                    imaEl[0] = direc[0];
-                    lbl1.setText(""+imaEl[0]);
-                }
-                else {
+
+                else
                     btnElegir4.setImageResource(direc[0]);
-                    imaEl[0] = direc[0];
-                    lbl1.setText(""+imaEl[0]);
-                }
+
                 btnPrimeraOP.setImageResource(0);
                 btnPrimeraOP.setEnabled(false);
+
+                ValidarNum(direc[0]);
             }
         });
 
         btnSegundaOP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnElegir1.getDrawable() == null) {
+                if(btnElegir1.getDrawable() == null)
                     btnElegir1.setImageResource(direc[1]);
-                    imaEl[1] = direc[1];
-                    lbl2.setText(""+imaEl[1]);
-                }
-                else if(btnElegir2.getDrawable() == null){
-                    btnElegir2.setImageResource(direc[1]);
-                    imaEl[1] = direc[1];
-                    lbl2.setText(""+imaEl[1]);
-                }
 
-                else if(btnElegir3.getDrawable() == null){
+                else if(btnElegir2.getDrawable() == null)
+                    btnElegir2.setImageResource(direc[1]);
+
+
+                else if(btnElegir3.getDrawable() == null)
                     btnElegir3.setImageResource(direc[1]);
-                    imaEl[1] = direc[1];
-                    lbl2.setText(""+imaEl[1]);
-                }
-                else {
+
+                else
                     btnElegir4.setImageResource(direc[1]);
-                    imaEl[1] = direc[1];
-                    lbl2.setText(""+imaEl[1]);
-                }
+
                 btnSegundaOP.setImageResource(0);
                 btnSegundaOP.setEnabled(false);
+
+                ValidarNum(direc[1]);
             }
         });
 
         btnTerceraOP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnElegir1.getDrawable() == null) {
+                if(btnElegir1.getDrawable() == null)
                     btnElegir1.setImageResource(direc[2]);
-                    imaEl[2] = direc[2];
-                    lbl3.setText(""+imaEl[2]);
-                }
-                else if(btnElegir2.getDrawable() == null){
-                    btnElegir2.setImageResource(direc[2]);
-                    imaEl[2] = direc[2];
-                    lbl3.setText(""+imaEl[2]);
-                }
 
-                else if(btnElegir3.getDrawable() == null){
+                else if(btnElegir2.getDrawable() == null)
+                    btnElegir2.setImageResource(direc[2]);
+
+                else if(btnElegir3.getDrawable() == null)
                     btnElegir3.setImageResource(direc[2]);
-                    imaEl[2] = direc[2];
-                    lbl3.setText(""+imaEl[2]);
-                }
-                else {
+
+                else
                     btnElegir4.setImageResource(direc[2]);
-                    imaEl[2] = direc[2];
-                    lbl3.setText(""+imaEl[2]);
-                }
+
                 btnTerceraOP.setImageResource(0);
                 btnTerceraOP.setEnabled(false);
+
+                ValidarNum(direc[2]);
             }
         });
 
         btnCuartaOP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnElegir1.getDrawable() == null) {
+                if(btnElegir1.getDrawable() == null)
                     btnElegir1.setImageResource(direc[3]);
-                    imaEl[3] = direc[3];
-                    lbl4.setText(""+imaEl[3]);
-                }
-                else if(btnElegir2.getDrawable() == null){
-                    btnElegir2.setImageResource(direc[3]);
-                    imaEl[3] = direc[3];
-                    lbl4.setText(""+imaEl[3]);
-                }
 
-                else if(btnElegir3.getDrawable() == null){
+                else if(btnElegir2.getDrawable() == null)
+                    btnElegir2.setImageResource(direc[3]);
+
+                else if(btnElegir3.getDrawable() == null)
                     btnElegir3.setImageResource(direc[3]);
-                    imaEl[3] = direc[3];
-                    lbl4.setText(""+imaEl[3]);
-                }
-                else {
+                else
                     btnElegir4.setImageResource(direc[3]);
-                    imaEl[3] = direc[3];
-                    lbl4.setText(""+imaEl[3]);
-                }
+
                 btnCuartaOP.setImageResource(0);
                 btnCuartaOP.setEnabled(false);
+
+                ValidarNum(direc[3]);
             }
         });
 
@@ -278,12 +241,6 @@ public class Nivel3Activity extends AppCompatActivity {
             }
         });
 
-
-        if(btnPrimeraOP.isEnabled() == false && btnSegundaOP.isEnabled() == false &&
-                btnTerceraOP.isEnabled() == false && btnCuartaOP.isEnabled() == false){
-            lbl0.setText("El array está lleno");
-        }
-
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -314,6 +271,30 @@ public class Nivel3Activity extends AppCompatActivity {
         return array;
     }
 
+    public void ValidarNum(int numDirec){
+        if(vali < 4){
+            imagEleccion[vali] = numDirec;
+            vali++;
+        }
+
+        if(vali == 4){
+            for(int i=0; i<4; i++){
+                if(very[i] == imagEleccion[i])
+                    verificar++;
+                else
+                    i=4;
+            }
+
+            if(verificar == 4) {
+                Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                ActivarbtnOp();
+            }
+        }
+    }
+
     public void ActivarbtnOp(){
         btnElegir1.setImageResource(0);
         btnElegir2.setImageResource(0);
@@ -329,5 +310,8 @@ public class Nivel3Activity extends AppCompatActivity {
         btnSegundaOP.setImageResource(direc[1]);
         btnTerceraOP.setImageResource(direc[2]);
         btnCuartaOP.setImageResource(direc[3]);
+
+        vali = 0;
+        verificar = 0;
     }
 }
