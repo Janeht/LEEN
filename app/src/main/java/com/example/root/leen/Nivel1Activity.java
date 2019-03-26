@@ -34,13 +34,17 @@ public class Nivel1Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        btnRegresar = (ImageButton)  findViewById(R.id.btnRegresar);
-        btnSig = (ImageButton) findViewById(R.id.btnSig);
-        imgUno = (ImageView) findViewById(R.id.imgUno);
-        numUno = (ImageView) findViewById(R.id.numUno);
-        x=0;
         changeImg(R.drawable.one,R.drawable.uno,150,200);
 
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Nivel1Activity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
         btnSig.setOnClickListener(new View.OnClickListener() {
             @Override
