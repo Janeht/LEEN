@@ -28,10 +28,8 @@ public class Nivel3Activity extends AppCompatActivity {
     int[] direc = new int[4];
     int[] imagEleccion = new int[4];
     int[] very = new int[4];
-    int verificar = 0;
-    int vali = 0;
-    int juegos = 0;
-    int vidas = 3;
+    int[] arrayNum = new int[5];
+    int verificar = 0, vali = 0, juegos = 0, vidas = 3, i = 0, num = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,8 +181,6 @@ public class Nivel3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -223,8 +219,10 @@ public class Nivel3Activity extends AppCompatActivity {
             }
 
             if(verificar == 4) {
-                Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
                 juegos++;
+                Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
+                arrayNum[i] = num;
+                i++;
                 CargarJuego();
             }
             else{
@@ -240,6 +238,7 @@ public class Nivel3Activity extends AppCompatActivity {
                     Toast.makeText(Nivel3Activity.this, "Has perminado tus vidas... Fin del juego :(", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 ActivarbtnOp();
             }
@@ -267,7 +266,7 @@ public class Nivel3Activity extends AppCompatActivity {
     }
 
     public void CargarJuego(){
-        if(juegos < 6){
+        if(juegos < 5){
             btnElegir1.setImageResource(0);
             btnElegir2.setImageResource(0);
             btnElegir3.setImageResource(0);
@@ -281,7 +280,17 @@ public class Nivel3Activity extends AppCompatActivity {
             vali = 0;
             verificar = 0;
 
-            int num = generarNum();
+            num = generarNum();
+
+            if(juegos > 0){
+                for(int j=0; arrayNum[j] != 0 ; j++){
+                    if(arrayNum[j] == num){
+                        num = generarNum();
+                        j=-1;
+                    }
+                }
+            }
+
             int num1 = 0;
             int num2 = 0;
             int num3 = 0;
@@ -355,6 +364,7 @@ public class Nivel3Activity extends AppCompatActivity {
             Toast.makeText(Nivel3Activity.this, "☻ !!Has ganado el juego!! ☻", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
