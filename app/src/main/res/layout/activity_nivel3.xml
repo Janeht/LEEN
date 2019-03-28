@@ -44,8 +44,38 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-70dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/igvVida1"
+                android:src="@drawable/sola"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/igvVida2"
+                android:src="@drawable/sola"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/igvVida3"
+                android:src="@drawable/sola"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center">
 
             <ImageView
@@ -104,6 +134,4 @@
                 android:layout_height="70dp"/>
         </LinearLayout>
     </LinearLayout>
-
-
 </android.support.constraint.ConstraintLayout>
