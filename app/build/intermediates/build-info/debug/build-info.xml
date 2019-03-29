@@ -6,7 +6,7 @@
     density="xxxhdpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1553140316952"
+    timestamp="1553614163244"
     token="870742903385254443"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -24,8 +24,50 @@
         duration="0" />
 
     <artifact
-        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
     <artifact
         location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
@@ -36,22 +78,13 @@
         location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
-        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -63,7 +96,7 @@
         location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -75,31 +108,73 @@
         location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
         location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
         location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
+        location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1553140316952"
+        timestamp="1553614163244"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
+            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
@@ -110,22 +185,13 @@
             location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -137,7 +203,7 @@
             location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -149,23 +215,23 @@
             location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\jjab_\AndroidStudioProjects\Proyecto\LEEN\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\home\janeth\Documentos\Escuela\Cuatri 8\DESOFAM\LEEN\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
+            location="C:\Users\kakas\AndroidStudioProjects\LEEN\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

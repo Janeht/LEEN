@@ -3,9 +3,9 @@
 
     <item android:drawable="@drawable/init3"
         android:duration="2000"/>
-    <item android:drawable="@drawable/fondo1"
+    <!--<item android:drawable="@drawable/fondo1"
         android:duration="2000"/>
-    <!--<item android:drawable="@drawable/fondo2"
+    <item android:drawable="@drawable/fondo2"
         android:duration="2000"/>
     <item android:drawable="@drawable/fondo2"
         android:duration="2000"/>

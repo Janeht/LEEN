@@ -23,23 +23,29 @@
                 android:background="#0000"
                 android:src="@drawable/animabotonflecha"
                 android:id="@+id/btnRegresar"/>
-
-            <ImageView
-                android:layout_width="150dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="15dp"
+            <ImageButton
+                android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_gravity="bottom"
                 android:layout_marginLeft="350dp"
-                android:background="#0000"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/silenciar" />
+                android:src="@drawable/help"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:id="@+id/btnAyuda"/>
 
         </LinearLayout>
-
-        <ImageView
+        <ImageButton
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="-80dp"
             android:id="@+id/numUno"/>
+
 
         <ImageView
             android:layout_width="0dp"

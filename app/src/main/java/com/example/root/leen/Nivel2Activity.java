@@ -82,10 +82,7 @@ public class Nivel2Activity extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Nivel2Activity.this, MainActivity.class);
-                startActivity(intent);
                 finish();
-
             }
         });
     }
