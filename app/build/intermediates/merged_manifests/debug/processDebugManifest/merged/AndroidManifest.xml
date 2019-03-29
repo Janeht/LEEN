@@ -34,6 +34,7 @@
         <activity android:name="com.example.root.leen.Nivel3Activity" />
 
         <service android:name="com.example.root.leen.ServicioMusica" />
+        <service android:name="com.example.root.leen.ServicioNivel3" />
     </application>
 
 </manifest>

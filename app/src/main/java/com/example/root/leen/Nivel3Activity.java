@@ -2,6 +2,7 @@ package com.example.root.leen;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -55,7 +56,9 @@ public class Nivel3Activity extends AppCompatActivity {
         igvVida1 = (ImageView) findViewById(R.id.igvVida1);
         igvVida2 = (ImageView) findViewById(R.id.igvVida2);
         igvVida3 = (ImageView) findViewById(R.id.igvVida3);
-
+        Intent i = new Intent(this, ServicioNivel3.class);
+        i.putExtra("action", ServicioNivel3.START);
+        startService(i);
         CargarJuego();
 
         btnPrimeraOP.setOnClickListener(new View.OnClickListener() {

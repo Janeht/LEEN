@@ -24,6 +24,7 @@
         <activity android:name=".Nivel2Activity" />
         <activity android:name=".Nivel3Activity" />
         <service android:name=".ServicioMusica" />
+        <service android:name=".ServicioNivel3" />
     </application>
 
 </manifest>
