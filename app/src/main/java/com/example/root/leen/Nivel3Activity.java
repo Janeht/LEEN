@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -29,8 +28,8 @@ public class Nivel3Activity extends AppCompatActivity {
     int[] direc = new int[4];
     int[] imagEleccion = new int[4];
     int[] very = new int[4];
-    int verificar = 0;
-    int vali = 0;
+    int[] arrayNum = new int[5];
+    int verificar = 0, vali = 0, juegos = 0, vidas = 3, i = 0, num = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,72 +50,7 @@ public class Nivel3Activity extends AppCompatActivity {
         btnElegir3 = (ImageView) findViewById(R.id.btnElegir3);
         btnElegir4 = (ImageView) findViewById(R.id.btnElegir4);
 
-        int num = generarNum();
-        int num1 = 0;
-        int num2 = 0;
-        int num3 = 0;
-        int num4 = 0;
-
-        if(num==1){
-            num1 = R.drawable.one;
-            num2 = R.drawable.two;
-            num3 = R.drawable.three;
-            num4 = R.drawable.four;
-        }
-
-        else if(num==2){
-            num1 = R.drawable.two;
-            num2 = R.drawable.three;
-            num3 = R.drawable.four;
-            num4 = R.drawable.five;
-        }
-
-        else if(num==3){
-            num1 = R.drawable.three;
-            num2 = R.drawable.four;
-            num3 = R.drawable.five;
-            num4 = R.drawable.six;
-        }
-
-        else if(num==4){
-            num1 = R.drawable.four;
-            num2 = R.drawable.five;
-            num3 = R.drawable.six;
-            num4 = R.drawable.seven;
-        }
-
-        else if(num==5){
-            num1 = R.drawable.five;
-            num2 = R.drawable.six;
-            num3 = R.drawable.seven;
-            num4 = R.drawable.eight;
-        }
-
-        else if(num==6){
-            num1 = R.drawable.six;
-            num2 = R.drawable.seven;
-            num3 = R.drawable.eight;
-            num4 = R.drawable.nine;
-        }
-
-        else {
-            num1 = R.drawable.seven;
-            num2 = R.drawable.eight;
-            num3 = R.drawable.nine;
-            num4 = R.drawable.teen;
-        }
-
-        very[0]=num1;
-        very[1]=num2;
-        very[2]=num3;
-        very[3]=num4;
-
-        direc = desordenar(num1, num2, num3, num4);
-
-        btnPrimeraOP.setImageResource(direc[0]);
-        btnSegundaOP.setImageResource(direc[1]);
-        btnTerceraOP.setImageResource(direc[2]);
-        btnCuartaOP.setImageResource(direc[3]);
+        CargarJuego();
 
         btnPrimeraOP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -284,10 +218,27 @@ public class Nivel3Activity extends AppCompatActivity {
             }
 
             if(verificar == 4) {
+                juegos++;
                 Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
+                arrayNum[i] = num;
+                i++;
+                CargarJuego();
             }
             else{
-                Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                vidas--;
+                if(vidas > 1) {
+                    Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vidas ♥ ♥ ", Toast.LENGTH_SHORT).show();
+                }else if(vidas == 1) {
+                    Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vida ♥ ", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Nivel3Activity.this, "Has perminado tus vidas... Fin del juego :(", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
                 ActivarbtnOp();
             }
         }
@@ -311,5 +262,108 @@ public class Nivel3Activity extends AppCompatActivity {
 
         vali = 0;
         verificar = 0;
+    }
+
+    public void CargarJuego(){
+        if(juegos < 5){
+            btnElegir1.setImageResource(0);
+            btnElegir2.setImageResource(0);
+            btnElegir3.setImageResource(0);
+            btnElegir4.setImageResource(0);
+
+            btnPrimeraOP.setEnabled(true);
+            btnSegundaOP.setEnabled(true);
+            btnTerceraOP.setEnabled(true);
+            btnCuartaOP.setEnabled(true);
+
+            vali = 0;
+            verificar = 0;
+
+            num = generarNum();
+
+            if(juegos > 0){
+                for(int j=0; arrayNum[j] != 0 ; j++){
+                    if(arrayNum[j] == num){
+                        num = generarNum();
+                        j=-1;
+                    }
+                }
+            }
+
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+
+            if(num==1){
+                num1 = R.drawable.one;
+                num2 = R.drawable.two;
+                num3 = R.drawable.three;
+                num4 = R.drawable.four;
+            }
+
+            else if(num==2){
+                num1 = R.drawable.two;
+                num2 = R.drawable.three;
+                num3 = R.drawable.four;
+                num4 = R.drawable.five;
+            }
+
+            else if(num==3){
+                num1 = R.drawable.three;
+                num2 = R.drawable.four;
+                num3 = R.drawable.five;
+                num4 = R.drawable.six;
+            }
+
+            else if(num==4){
+                num1 = R.drawable.four;
+                num2 = R.drawable.five;
+                num3 = R.drawable.six;
+                num4 = R.drawable.seven;
+            }
+
+            else if(num==5){
+                num1 = R.drawable.five;
+                num2 = R.drawable.six;
+                num3 = R.drawable.seven;
+                num4 = R.drawable.eight;
+            }
+
+            else if(num==6){
+                num1 = R.drawable.six;
+                num2 = R.drawable.seven;
+                num3 = R.drawable.eight;
+                num4 = R.drawable.nine;
+            }
+
+            else {
+                num1 = R.drawable.seven;
+                num2 = R.drawable.eight;
+                num3 = R.drawable.nine;
+                num4 = R.drawable.teen;
+            }
+
+            very[0]=num1;
+            very[1]=num2;
+            very[2]=num3;
+            very[3]=num4;
+
+            direc = desordenar(num1, num2, num3, num4);
+
+            btnPrimeraOP.setImageResource(direc[0]);
+            btnSegundaOP.setImageResource(direc[1]);
+            btnTerceraOP.setImageResource(direc[2]);
+            btnCuartaOP.setImageResource(direc[3]);
+
+            if(vidas == 3)
+                Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vidas ♥ ♥ ♥", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(Nivel3Activity.this, "☻ !!Has ganado el juego!! ☻", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
