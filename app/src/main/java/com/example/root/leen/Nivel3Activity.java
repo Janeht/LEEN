@@ -24,6 +24,9 @@ public class Nivel3Activity extends AppCompatActivity {
     private ImageView btnElegir2;
     private ImageView btnElegir3;
     private ImageView btnElegir4;
+    private ImageView igvVida1;
+    private ImageView igvVida2;
+    private ImageView igvVida3;
 
     int[] direc = new int[4];
     int[] imagEleccion = new int[4];
@@ -49,6 +52,9 @@ public class Nivel3Activity extends AppCompatActivity {
         btnElegir2 = (ImageView) findViewById(R.id.btnElegir2);
         btnElegir3 = (ImageView) findViewById(R.id.btnElegir3);
         btnElegir4 = (ImageView) findViewById(R.id.btnElegir4);
+        igvVida1 = (ImageView) findViewById(R.id.igvVida1);
+        igvVida2 = (ImageView) findViewById(R.id.igvVida2);
+        igvVida3 = (ImageView) findViewById(R.id.igvVida3);
 
         CargarJuego();
 
@@ -183,7 +189,6 @@ public class Nivel3Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     public int generarNum(){
@@ -229,12 +234,16 @@ public class Nivel3Activity extends AppCompatActivity {
                 vidas--;
                 if(vidas > 1) {
                     Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vidas ♥ ♥ ", Toast.LENGTH_SHORT).show();
+                    igvVida1.setImageResource(0);
+                    igvVida1.setImageResource(R.drawable.sol);
                 }else if(vidas == 1) {
                     Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vida ♥ ", Toast.LENGTH_SHORT).show();
+                    igvVida2.setImageResource(0);
+                    igvVida2.setImageResource(R.drawable.sol);
                 }
                 else{
+                    igvVida3.setImageResource(0);
+                    igvVida3.setImageResource(R.drawable.sol);
                     Toast.makeText(Nivel3Activity.this, "Has perminado tus vidas... Fin del juego :(", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
                     startActivity(intent);
@@ -356,9 +365,6 @@ public class Nivel3Activity extends AppCompatActivity {
             btnSegundaOP.setImageResource(direc[1]);
             btnTerceraOP.setImageResource(direc[2]);
             btnCuartaOP.setImageResource(direc[3]);
-
-            if(vidas == 3)
-                Toast.makeText(Nivel3Activity.this, " Tienes " + vidas + " vidas ♥ ♥ ♥", Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(Nivel3Activity.this, "☻ !!Has ganado el juego!! ☻", Toast.LENGTH_SHORT).show();
