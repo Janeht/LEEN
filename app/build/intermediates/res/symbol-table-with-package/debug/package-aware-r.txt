@@ -639,7 +639,6 @@ drawable btnniveldos
 drawable btnniveltres
 drawable btnniveluno
 drawable cinco
-drawable cincoo
 drawable cuatro
 drawable diez
 drawable dos
@@ -692,6 +691,8 @@ drawable planeta8
 drawable planeta9
 drawable prueba1
 drawable prueba2
+drawable salir
+drawable salir1
 drawable seis
 drawable seven
 drawable siete
@@ -796,6 +797,7 @@ id igvVida1
 id igvVida2
 id igvVida3
 id image
+id imgNivel2
 id imgUno
 id info
 id invisible
