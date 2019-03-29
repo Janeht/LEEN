@@ -697,6 +697,8 @@ drawable seven
 drawable siete
 drawable silenciar
 drawable six
+drawable sol
+drawable sola
 drawable sonido
 drawable teen
 drawable three
@@ -790,6 +792,9 @@ id homeAsUp
 id icon
 id icon_group
 id ifRoom
+id igvVida1
+id igvVida2
+id igvVida3
 id image
 id imgUno
 id info
@@ -927,6 +932,7 @@ raw cuatro
 raw diez
 raw dos
 raw musica
+raw nivel3
 raw niveluno
 raw nueve
 raw ocho
