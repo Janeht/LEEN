@@ -3,7 +3,6 @@ package com.example.root.leen;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +11,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
     private Button btn1;
     private Button btn2;
     private Button btn3;
+    private ImageButton btnMusic;
+    private ImageButton help;
     public ImageButton musica;
-    public MediaPlayer mp;
+    public MediaPlayer ayuda;
+    public String music="activada";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         btn1 = (Button)  findViewById(R.id.btn1);
         btn2 = (Button)  findViewById(R.id.btn2);
         btn3 = (Button)  findViewById(R.id.btn3);
+        btnMusic=(ImageButton) findViewById(R.id.btnMusic);
+        help=(ImageButton) findViewById(R.id.btnAyuda);
+
+        Intent i = new Intent(this, ServicioMusica.class);
+        i.putExtra("action", ServicioMusica.START);
+        startService(i);
+        ayuda= MediaPlayer.create(this, R.raw.niveluno);
+
 
         this.fondo = (ConstraintLayout) findViewById(R.id.prueba);
         this.animacion = (AnimationDrawable) this.fondo.getBackground();
@@ -43,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
         this.animacion.setExitFadeDuration(3500);
         this.animacion.start();
 
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, Nivel1Activity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -59,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, Nivel2Activity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -68,9 +74,34 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Nivel3Activity.class);
                 startActivity(intent);
-                finish();
             }
         });
+        btnMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(music=="activada")
+                {
+                    btnMusic.setImageResource(R.drawable.silenciar);
+                    music="desactivada";
+                    Intent i = new Intent(MainActivity.this,ServicioMusica.class);
+                    i.putExtra("action", ServicioMusica.PAUSE);
+                    startService(i);
+                }else{
+                    btnMusic.setImageResource(R.drawable.sonido);
+                    music="activada";
+                    Intent i = new Intent(MainActivity.this,ServicioMusica.class);
+                    i.putExtra("action", ServicioMusica.START);
+                    startService(i);
+                }
+            }
+        });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ayuda.start();
+            }
+        });
+
 
 
     }

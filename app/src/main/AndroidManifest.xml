@@ -10,7 +10,8 @@
         android:screenOrientation="landscape"
         android:hardwareAccelerated="false"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +23,7 @@
         <activity android:name=".Nivel1Activity" />
         <activity android:name=".Nivel2Activity" />
         <activity android:name=".Nivel3Activity" />
+        <service android:name=".ServicioMusica" />
     </application>
 
 </manifest>

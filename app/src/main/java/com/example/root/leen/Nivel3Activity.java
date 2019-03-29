@@ -245,10 +245,7 @@ public class Nivel3Activity extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
-                startActivity(intent);
                 finish();
-
             }
         });
 
