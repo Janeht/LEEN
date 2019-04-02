@@ -1,7 +1,10 @@
 package com.example.root.leen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,9 +27,12 @@ public class Nivel2Activity extends AppCompatActivity {
     private ImageView btnPrimeraOP;
     private ImageView btnSegundaOP;
     private ImageView btnTerceraOP;
+    private ImageView imgVida1;
+    private ImageView imgVida2;
+    private ImageView imgVida3;
     private TextView prueba;
 
-    int num=0;
+    int num=0, limite=0, vidas=3;
     int mostrar[]= new int[4];
 
     @Override
@@ -43,6 +49,9 @@ public class Nivel2Activity extends AppCompatActivity {
         btnSegundaOP = (ImageView) findViewById(R.id.btnSegundaOP);
         btnTerceraOP = (ImageView) findViewById(R.id.btnTerceraOP);
         imgNivel2 = (ImageView) findViewById(R.id.imgNivel2);
+        imgVida1 = (ImageView)  findViewById(R.id.imgVida1);
+        imgVida2 = (ImageView)  findViewById(R.id.imgVida2);
+        imgVida3 = (ImageView)  findViewById(R.id.imgVida3);
         prueba = (TextView) findViewById(R.id.prueba);
 
         guardarJuego();
@@ -85,173 +94,218 @@ public class Nivel2Activity extends AppCompatActivity {
     }
 
     public void guardarJuego(){
-        imgNivel2.setImageResource(0);
-        btnPrimeraOP.setImageResource(0);
-        btnSegundaOP.setImageResource(0);
-        btnTerceraOP.setImageResource(0);
 
-        num = generarNum();
+        if(limite < 5){
 
-        prueba.setText("Prueba " + num);
+            imgNivel2.setImageResource(0);
+            btnPrimeraOP.setImageResource(0);
+            btnSegundaOP.setImageResource(0);
+            btnTerceraOP.setImageResource(0);
 
-        if (num == 1) {
-            mostrar[0] = R.drawable.uno;
-            mostrar[1] = R.drawable.two;
-            mostrar[2] = R.drawable.one;
-            mostrar[3] = R.drawable.four;
+            num = generarNum();
 
-        } else if (num == 2) {
-            mostrar[0] = R.drawable.dos;
-            mostrar[1] = R.drawable.two;
-            mostrar[2] = R.drawable.three;
-            mostrar[3] = R.drawable.four;
-        } else if (num == 3) {
-            mostrar[0] = R.drawable.tres;
-            mostrar[1] = R.drawable.five;
-            mostrar[2] = R.drawable.four;
-            mostrar[3] = R.drawable.three;
-        } else if (num == 4) {
-            mostrar[0] = R.drawable.cuatro;
-            mostrar[1] = R.drawable.two;
-            mostrar[2] = R.drawable.four;
-            mostrar[3] = R.drawable.six;
-        } else if (num == 5) {
-            mostrar[0] = R.drawable.cinco;
-            mostrar[1] = R.drawable.five;
-            mostrar[2] = R.drawable.six;
-            mostrar[3] = R.drawable.four;
-        } else if (num == 6) {
-            mostrar[0] = R.drawable.seis;
-            mostrar[1] = R.drawable.eight;
-            mostrar[2] = R.drawable.three;
-            mostrar[3] = R.drawable.six;
-        } else if (num == 7) {
-            mostrar[0] = R.drawable.siete;
-            mostrar[1] = R.drawable.seven;
-            mostrar[2] = R.drawable.six;
-            mostrar[3] = R.drawable.nine;
-        } else if (num == 8) {
-            mostrar[0] = R.drawable.ocho;
-            mostrar[1] = R.drawable.teen;
-            mostrar[2] = R.drawable.eight;
-            mostrar[3] = R.drawable.nine;
-        } else if (num == 9) {
-            mostrar[0] = R.drawable.nueve;
-            mostrar[1] = R.drawable.six;
-            mostrar[2] = R.drawable.nine;
-            mostrar[3] = R.drawable.eight;
-        } else {
-            mostrar[0] = R.drawable.diez;
-            mostrar[1] = R.drawable.teen;
-            mostrar[2] = R.drawable.eight;
-            mostrar[3] = R.drawable.nine;
+            prueba.setText("Prueba " + num);
+
+            if (num == 1) {
+                mostrar[0] = R.drawable.uno;
+                mostrar[1] = R.drawable.two;
+                mostrar[2] = R.drawable.one;
+                mostrar[3] = R.drawable.four;
+
+            } else if (num == 2) {
+                mostrar[0] = R.drawable.dos;
+                mostrar[1] = R.drawable.two;
+                mostrar[2] = R.drawable.three;
+                mostrar[3] = R.drawable.four;
+            } else if (num == 3) {
+                mostrar[0] = R.drawable.tres;
+                mostrar[1] = R.drawable.five;
+                mostrar[2] = R.drawable.four;
+                mostrar[3] = R.drawable.three;
+            } else if (num == 4) {
+                mostrar[0] = R.drawable.cuatro;
+                mostrar[1] = R.drawable.two;
+                mostrar[2] = R.drawable.four;
+                mostrar[3] = R.drawable.six;
+            } else if (num == 5) {
+                mostrar[0] = R.drawable.cinco;
+                mostrar[1] = R.drawable.five;
+                mostrar[2] = R.drawable.six;
+                mostrar[3] = R.drawable.four;
+            } else if (num == 6) {
+                mostrar[0] = R.drawable.seis;
+                mostrar[1] = R.drawable.eight;
+                mostrar[2] = R.drawable.three;
+                mostrar[3] = R.drawable.six;
+            } else if (num == 7) {
+                mostrar[0] = R.drawable.siete;
+                mostrar[1] = R.drawable.seven;
+                mostrar[2] = R.drawable.six;
+                mostrar[3] = R.drawable.nine;
+            } else if (num == 8) {
+                mostrar[0] = R.drawable.ocho;
+                mostrar[1] = R.drawable.teen;
+                mostrar[2] = R.drawable.eight;
+                mostrar[3] = R.drawable.nine;
+            } else if (num == 9) {
+                mostrar[0] = R.drawable.nueve;
+                mostrar[1] = R.drawable.six;
+                mostrar[2] = R.drawable.nine;
+                mostrar[3] = R.drawable.eight;
+            } else {
+                mostrar[0] = R.drawable.diez;
+                mostrar[1] = R.drawable.teen;
+                mostrar[2] = R.drawable.eight;
+                mostrar[3] = R.drawable.nine;
+            }
+
+            imgNivel2.setImageResource(mostrar[0]);
+            btnPrimeraOP.setImageResource(mostrar[1]);
+            btnSegundaOP.setImageResource(mostrar[2]);
+            btnTerceraOP.setImageResource(mostrar[3]);
         }
-
-        imgNivel2.setImageResource(mostrar[0]);
-        btnPrimeraOP.setImageResource(mostrar[1]);
-        btnSegundaOP.setImageResource(mostrar[2]);
-        btnTerceraOP.setImageResource(mostrar[3]);
+        else{
+            Toast.makeText(Nivel2Activity.this, "Ganaste", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Nivel2Activity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
     public void verificarBoton(int img){
 
+
+
         if (num == 1) {
             if (mostrar[2]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 2) {
             if (mostrar[1]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
         } else if (num == 3) {
             if (mostrar[3]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 4) {
             if (mostrar[2]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 5) {
             if (mostrar[1]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 6) {
             if (mostrar[3]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                limite++;
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 7) {
+            limite++;
             if (mostrar[1]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 8) {
+            limite++;
             if (mostrar[2]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else if (num == 9) {
+            limite++;
             if (mostrar[2]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
 
         } else {
+            limite++;
             if (mostrar[1]==img){
-                Toast.makeText(Nivel2Activity.this,"Concuerda.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Nivel2Activity.this,"Felicidades.", Toast.LENGTH_SHORT).show();
                 limpiar();
                 guardarJuego();
             }
             else{
-                Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+                vidas();
             }
+        }
+    }
+
+    public void vidas(){
+        vidas--;
+        if(vidas == 2){
+            Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+            imgVida1.setImageResource(0);
+            imgVida1.setImageResource(R.drawable.sol);
+        }
+        else if(vidas == 1){
+            Toast.makeText(Nivel2Activity.this,"Vuelve a intentarlo.", Toast.LENGTH_SHORT).show();
+            imgVida2.setImageResource(0);
+            imgVida2.setImageResource(R.drawable.sol);
+        }
+        else
+        {
+            imgVida3.setImageResource(0);
+            imgVida3.setImageResource(R.drawable.sol);
+            Toast.makeText(Nivel2Activity.this,"Has perdido, sorry.", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Nivel2Activity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
