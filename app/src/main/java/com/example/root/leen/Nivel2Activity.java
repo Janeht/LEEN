@@ -30,7 +30,6 @@ public class Nivel2Activity extends AppCompatActivity {
     private ImageView imgVida1;
     private ImageView imgVida2;
     private ImageView imgVida3;
-    private TextView prueba;
 
     int num=0, limite=0, vidas=3;
     int mostrar[]= new int[4];
@@ -52,7 +51,6 @@ public class Nivel2Activity extends AppCompatActivity {
         imgVida1 = (ImageView)  findViewById(R.id.imgVida1);
         imgVida2 = (ImageView)  findViewById(R.id.imgVida2);
         imgVida3 = (ImageView)  findViewById(R.id.imgVida3);
-        prueba = (TextView) findViewById(R.id.prueba);
 
         guardarJuego();
 
@@ -103,8 +101,6 @@ public class Nivel2Activity extends AppCompatActivity {
             btnTerceraOP.setImageResource(0);
 
             num = generarNum();
-
-            prueba.setText("Prueba " + num);
 
             if (num == 1) {
                 mostrar[0] = R.drawable.uno;
