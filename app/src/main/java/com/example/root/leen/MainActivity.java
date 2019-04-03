@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn3;
     private ImageButton btnMusic;
     private ImageButton help;
+    private Intent i;
     public ImageButton musica;
     public MediaPlayer ayuda;
     public String music="activada";
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnMusic=(ImageButton) findViewById(R.id.btnMusic);
         help=(ImageButton) findViewById(R.id.btnAyuda);
 
-        Intent i = new Intent(this, ServicioMusica.class);
+        i= new Intent(this, ServicioMusica.class);
         i.putExtra("action", ServicioMusica.START);
         startService(i);
         ayuda= MediaPlayer.create(this, R.raw.niveluno);

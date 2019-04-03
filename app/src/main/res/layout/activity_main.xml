@@ -91,15 +91,16 @@
                     android:text="Nivel 3"/>
             </LinearLayout>
         </LinearLayout>
+
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/btnAyuda"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="19dp"
-            android:src="@drawable/help"
-            android:scaleType="fitCenter"
             android:background="@android:color/transparent"
-            android:id="@+id/btnAyuda"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/animabotonayuda" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

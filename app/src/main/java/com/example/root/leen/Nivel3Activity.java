@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -15,7 +16,7 @@ import java.util.Random;
 
 public class Nivel3Activity extends AppCompatActivity {
 
-    private Button btnRegresar;
+    private ImageButton btnRegresar;
     private Button btnReproducir;
     private ImageView btnPrimeraOP;
     private ImageView btnSegundaOP;
@@ -28,6 +29,10 @@ public class Nivel3Activity extends AppCompatActivity {
     private ImageView igvVida1;
     private ImageView igvVida2;
     private ImageView igvVida3;
+    private ImageButton btnAyuda;
+    private Intent intento;
+
+    public MediaPlayer ayuda;
 
     int[] direc = new int[4];
     int[] imagEleccion = new int[4];
@@ -43,8 +48,8 @@ public class Nivel3Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        btnRegresar = (Button) findViewById(R.id.btnRegresar);
-        btnReproducir = (Button) findViewById(R.id.btnReproducir);
+        btnRegresar = (ImageButton) findViewById(R.id.btnRegresar);
+//        btnReproducir = (Button) findViewById(R.id.btnReproducir);
         btnPrimeraOP = (ImageView) findViewById(R.id.btnPrimeraOP);
         btnSegundaOP = (ImageView) findViewById(R.id.btnSegundaOP);
         btnTerceraOP = (ImageView) findViewById(R.id.btnTerceraOP);
@@ -56,9 +61,9 @@ public class Nivel3Activity extends AppCompatActivity {
         igvVida1 = (ImageView) findViewById(R.id.igvVida1);
         igvVida2 = (ImageView) findViewById(R.id.igvVida2);
         igvVida3 = (ImageView) findViewById(R.id.igvVida3);
-        Intent i = new Intent(this, ServicioNivel3.class);
-        i.putExtra("action", ServicioNivel3.START);
-        startService(i);
+        btnAyuda=(ImageButton) findViewById(R.id.btnAyuda);
+
+        ayuda= MediaPlayer.create(this, R.raw.ordena);
         CargarJuego();
 
         btnPrimeraOP.setOnClickListener(new View.OnClickListener() {
@@ -227,7 +232,9 @@ public class Nivel3Activity extends AppCompatActivity {
 
             if(verificar == 4) {
                 juegos++;
-                Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
+                if(juegos<5)
+                    audios(1,6,"secuencia correcta");
+               // Toast.makeText(Nivel3Activity.this, "¡Felicidades secuencia correcta! ♥", Toast.LENGTH_SHORT).show();
                 arrayNum[i] = num;
                 i++;
                 CargarJuego();
@@ -235,25 +242,63 @@ public class Nivel3Activity extends AppCompatActivity {
             else{
                 vidas--;
                 if(vidas > 1) {
-                    Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                     audios(7,8,"vuelve a intentarlo 1");
+                    //Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
                     igvVida1.setImageResource(0);
                     igvVida1.setImageResource(R.drawable.sol);
                 }else if(vidas == 1) {
-                    Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+                    audios(7,8,"vuelve a intentarlo 2");
+                    //Toast.makeText(Nivel3Activity.this, "Vuelve a intentarlo", Toast.LENGTH_SHORT).show();
                     igvVida2.setImageResource(0);
                     igvVida2.setImageResource(R.drawable.sol);
                 }
                 else{
                     igvVida3.setImageResource(0);
                     igvVida3.setImageResource(R.drawable.sol);
-                    Toast.makeText(Nivel3Activity.this, "Has perminado tus vidas... Fin del juego :(", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
-                    startActivity(intent);
+                    audios(13,14,"sin vidas");
+                   // Toast.makeText(Nivel3Activity.this, "Has perminado tus vidas... Fin del juego :(", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 ActivarbtnOp();
             }
         }
+    }
+
+    private void audios(int ini, int fin,String lugar) {
+        intento= new Intent(this, ServicioSonidos.class);
+        intento.putExtra("action", ServicioMusica.START);
+        Random r = new Random();
+
+        int num=(int)Math.floor(Math.random()*(fin-ini+1)+ini);
+        if(num==1)
+            intento.putExtra("music", R.raw.correcto);
+        else if(num==2)
+            intento.putExtra("music", R.raw.correcto2);
+        else if(num==3)
+            intento.putExtra("music", R.raw.genial);
+        else if(num==4)
+            intento.putExtra("music", R.raw.genial2);
+        else if(num==5)
+            intento.putExtra("music", R.raw.lo_lograste);
+        else if(num==6)
+            intento.putExtra("music", R.raw.lo_lograste2);
+        else if(num==7)
+            intento.putExtra("music", R.raw.intentalo_otra_vez);
+        else if(num==8)
+            intento.putExtra("music", R.raw.intentalo_otra_vez2);
+        else if(num==9)
+            intento.putExtra("music", R.raw.felicidades);
+        else if(num==10)
+            intento.putExtra("music", R.raw.felicidades2);
+        else if(num==11)
+            intento.putExtra("music", R.raw.hiciste_muy_bien);
+        else if(num==12)
+            intento.putExtra("music", R.raw.hiciste_muy_bien2);
+        else if(num==13)
+            intento.putExtra("music", R.raw.repasa_uno);
+        else if(num==14)
+            intento.putExtra("music", R.raw.repasa_uno2);
+        startService(intento);
     }
 
     public void ActivarbtnOp(){
@@ -308,52 +353,52 @@ public class Nivel3Activity extends AppCompatActivity {
             int num4 = 0;
 
             if(num==1){
-                num1 = R.drawable.one;
-                num2 = R.drawable.two;
-                num3 = R.drawable.three;
-                num4 = R.drawable.four;
+                num1 = R.drawable.animauno;
+                num2 = R.drawable.animados;
+                num3 = R.drawable.animatres;
+                num4 = R.drawable.animacuatro;
             }
 
             else if(num==2){
-                num1 = R.drawable.two;
-                num2 = R.drawable.three;
-                num3 = R.drawable.four;
-                num4 = R.drawable.five;
+                num1 = R.drawable.animados;
+                num2 = R.drawable.animatres;
+                num3 = R.drawable.animacuatro;
+                num4 = R.drawable.animacinco;
             }
 
             else if(num==3){
-                num1 = R.drawable.three;
-                num2 = R.drawable.four;
-                num3 = R.drawable.five;
-                num4 = R.drawable.six;
+                num1 = R.drawable.animatres;
+                num2 = R.drawable.animacuatro;
+                num3 = R.drawable.animacinco;
+                num4 = R.drawable.animaseis;
             }
 
             else if(num==4){
-                num1 = R.drawable.four;
-                num2 = R.drawable.five;
-                num3 = R.drawable.six;
-                num4 = R.drawable.seven;
+                num1 = R.drawable.animacuatro;
+                num2 = R.drawable.animacinco;
+                num3 = R.drawable.animaseis;
+                num4 = R.drawable.animasiete;
             }
 
             else if(num==5){
-                num1 = R.drawable.five;
-                num2 = R.drawable.six;
-                num3 = R.drawable.seven;
-                num4 = R.drawable.eight;
+                num1 = R.drawable.animacinco;
+                num2 = R.drawable.animaseis;
+                num3 = R.drawable.animasiete;
+                num4 = R.drawable.animaocho;
             }
 
             else if(num==6){
-                num1 = R.drawable.six;
-                num2 = R.drawable.seven;
-                num3 = R.drawable.eight;
-                num4 = R.drawable.nine;
+                num1 = R.drawable.animaseis;
+                num2 = R.drawable.animasiete;
+                num3 = R.drawable.animaocho;
+                num4 = R.drawable.animanueve;
             }
 
             else {
-                num1 = R.drawable.seven;
-                num2 = R.drawable.eight;
-                num3 = R.drawable.nine;
-                num4 = R.drawable.teen;
+                num1 = R.drawable.animasiete;
+                num2 = R.drawable.animaocho;
+                num3 = R.drawable.animanueve;
+                num4 = R.drawable.animadiez;
             }
 
             very[0]=num1;
@@ -369,10 +414,16 @@ public class Nivel3Activity extends AppCompatActivity {
             btnCuartaOP.setImageResource(direc[3]);
         }
         else{
-            Toast.makeText(Nivel3Activity.this, "☻ !!Has ganado el juego!! ☻", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Nivel3Activity.this, MainActivity.class);
-            startActivity(intent);
+            audios(9,12, "ganaste el juego");
+            //Toast.makeText(Nivel3Activity.this, "☻ !!Has ganado el juego!! ☻", Toast.LENGTH_SHORT).show();
+
             finish();
         }
+        btnAyuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ayuda.start();
+            }
+        });
     }
 }

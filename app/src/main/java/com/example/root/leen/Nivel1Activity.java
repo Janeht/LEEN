@@ -1,8 +1,8 @@
 package com.example.root.leen;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +40,7 @@ public class Nivel1Activity extends AppCompatActivity {
 
         ayuda= MediaPlayer.create(this, R.raw.precionanum);
 
+
         changeImg(R.drawable.one,R.drawable.uno,150,200,R.raw.uno);
 
         btnRegresar.setOnClickListener(new View.OnClickListener() {
@@ -56,31 +57,31 @@ public class Nivel1Activity extends AppCompatActivity {
                 if (x>9)
                     x=0;
                 if (x==0){
-                    changeImg(R.drawable.one,R.drawable.uno,150,200,R.raw.uno);
+                    changeImg(R.drawable.animauno,R.drawable.uno,150,200,R.raw.uno);
                 }
                 else if (x==1){
-                    changeImg(R.drawable.two,R.drawable.dos,150,300,R.raw.dos);
+                    changeImg(R.drawable.animados,R.drawable.dos,150,300,R.raw.dos);
                 }
                 else if (x==2){
-                    changeImg(R.drawable.three,R.drawable.tres,150,300,R.raw.tres);
+                    changeImg(R.drawable.animatres,R.drawable.tres,150,300,R.raw.tres);
                 }
                 else if (x==3){
-                    changeImg(R.drawable.four,R.drawable.cuatro,180,320,R.raw.cuatro);
+                    changeImg(R.drawable.animacuatro,R.drawable.cuatro,180,320,R.raw.cuatro);
                 }
                 else if (x==4){
-                    changeImg(R.drawable.five,R.drawable.cinco,180,180,R.raw.cinco);
+                    changeImg(R.drawable.animacinco,R.drawable.cinco,180,180,R.raw.cinco);
                 }
                 else if (x==5){
-                    changeImg(R.drawable.six,R.drawable.seis,200,330,R.raw.seis);
+                    changeImg(R.drawable.animaseis,R.drawable.seis,200,330,R.raw.seis);
                 }else if (x==6){
-                    changeImg(R.drawable.seven,R.drawable.siete,210,350,R.raw.siete);
+                    changeImg(R.drawable.animasiete,R.drawable.siete,210,350,R.raw.siete);
                 }else if (x==7){
-                    changeImg(R.drawable.eight,R.drawable.ocho,210,350,R.raw.ocho);
+                    changeImg(R.drawable.animaocho,R.drawable.ocho,210,350,R.raw.ocho);
                 }else if (x==8){
-                    changeImg(R.drawable.nine,R.drawable.nueve,210,350,R.raw.nueve);
+                    changeImg(R.drawable.animanueve,R.drawable.nueve,210,350,R.raw.nueve);
                 }
                 else if (x==9){
-                    changeImg(R.drawable.teen,R.drawable.diez,210,350,R.raw.diez);
+                    changeImg(R.drawable.animadiez,R.drawable.diez,210,350,R.raw.diez);
                 }
 
             }

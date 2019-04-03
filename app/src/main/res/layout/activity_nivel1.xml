@@ -14,8 +14,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp">
-
+            android:layout_height="80dp"
+            android:orientation="horizontal">
             <ImageButton
                 android:layout_width="150dp"
                 android:layout_height="50dp"
@@ -23,15 +23,12 @@
                 android:background="#0000"
                 android:src="@drawable/animabotonflecha"
                 android:id="@+id/btnRegresar"/>
-            android:layout_marginLeft="350dp"
-            android:layout_marginTop="15dp"
             <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="350dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/help"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="400dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/animabotonayuda"
                 android:scaleType="fitCenter"
                 android:background="@android:color/transparent"
                 android:id="@+id/btnAyuda"/>
